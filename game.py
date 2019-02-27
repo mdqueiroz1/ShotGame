@@ -22,7 +22,7 @@ def principal():
         tela.fill((0, 0, 0))
         for c in coisas:
             pygame.draw.rect(tela, c.cor, (c.x, c.y, c.tam, c.tam))
-        inimigo.x -= 10
+        inimigo.x -= 20
         if inimigo.x < 0:
             inimigo.x = 790
 
@@ -30,19 +30,19 @@ def principal():
         pygame.event.pump()
         teclas = pygame.key.get_pressed()
         if teclas[pygame.K_RIGHT]:
-            p.x += 10
+            p.x += 20
         if teclas[pygame.K_LEFT]:
-            p.x -= 10
+            p.x -= 20
         if teclas[pygame.K_UP]:
-            p.y -= 10
+            p.y -= 20
         if teclas[pygame.K_DOWN]:
-            p.y +=  10
+            p.y +=  20
         if teclas[pygame.K_SPACE] and not tiro:
             tiro = Personagem(p.x, p.y, 10, (255, 255,255))
             coisas.append(tiro)
 
         if tiro:
-            tiro.x += 10
+            tiro.x += 50
             if tiro.x > 800:
                 tiro = None
                 coisas.pop()
